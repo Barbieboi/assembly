@@ -3,6 +3,13 @@
 .type fibo , %function
 
 fibo : 
-	push {lr}
-	mov r1 , r0 
-	
+	mov r2, r0
+	loop : 
+	cmp r2 , #0
+	beq zero 
+	cmp r2, #1
+	beq uno
+
+
+
+

@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=fact
+TARGET:=fibo
 
-DEPS:=fact.s main_fact.c
+DEPS:=fibo.s main_fibo.c
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
