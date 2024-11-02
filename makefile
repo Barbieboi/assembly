@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=fibo
+TARGET:=sum_array
 
-DEPS:=fibo.s main_fibo.c
+DEPS:=sum_array.s main_sumarray.c
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
