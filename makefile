@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=sum_array
+TARGET:=contapari
 
-DEPS:=sum_array.s main_sumarray.c
+DEPS:=contapari.s main_contapari.c
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)

@@ -7,13 +7,13 @@ extern void sum_array(int *arr, int n);
 
 int main(int argc, char **argv){
 	
-	clock_t start = clock();
 	int n = 100000000;
 	int *a = malloc(sizeof(int)*n);
 	srand(time(NULL));
 	for(int i = 0 ; i < n ; i++){
 		a[i] = rand();
 	}
+	clock_t start = clock();
 	sum_array(a, n);
 
 	free(a);
