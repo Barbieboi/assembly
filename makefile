@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=find_max
+TARGET:=stringa_cmp
 
-DEPS:=find_max.s main_find_max.c
+DEPS:=stringa_cmp.s main.c
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
