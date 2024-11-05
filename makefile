@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=contapari
+TARGET:=find_max
 
-DEPS:=contapari.s main_contapari.c
+DEPS:=find_max.s main_find_max.c
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
