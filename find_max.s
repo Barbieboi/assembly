@@ -2,7 +2,7 @@
 .global find_max
 .type find_max , %function
 
-@ massimo in un array di unsigned int
+@ massimo in un array di int
 
 find_max :
 	push {lr}

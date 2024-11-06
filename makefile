@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=stringa_cmp
+TARGET:=countzero
 
-DEPS:=stringa_cmp.s main.c
+DEPS:=countzero.s main.c
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)

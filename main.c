@@ -8,7 +8,7 @@
 
 #define N 10
 
-#define MAX 10
+#define MAX 100
 
 void stampa_array(int *a, int n);
 int * crea_arr(int n);
@@ -18,14 +18,19 @@ extern int contapari(int n);
 extern void sum_array(int *arr, int n);
 extern int somma_cond(int* arr, int n ,int range);
 extern int stringa_cmp(char *s1, char *s2 );
+extern int countzero(int *arr, int n);
 
 int main(int argc, char **argv){
 	
+
+	int *a = crea_arr(N);
+	stampa_array(a, N);
+
 	clock_t start = clock();
 //	------------------------------
 
 
-
+	printf("zeri all'interno dell'array:%d\n", countzero(a, N));
 
 
 
