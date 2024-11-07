@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=countzero
+TARGET:=reduce
 
-DEPS:=countzero.s main.c
+DEPS:=reduce.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)

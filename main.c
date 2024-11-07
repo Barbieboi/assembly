@@ -8,7 +8,7 @@
 
 #define N 10
 
-#define MAX 100
+#define MAX 10
 
 void stampa_array(int *a, int n);
 int * crea_arr(int n);
