@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=reduce
+TARGET:=change
 
-DEPS:=reduce.s
+DEPS:=change.s main_change.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)

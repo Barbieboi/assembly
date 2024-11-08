@@ -19,19 +19,17 @@ extern void sum_array(int *arr, int n);
 extern int somma_cond(int* arr, int n ,int range);
 extern int stringa_cmp(char *s1, char *s2 );
 extern int countzero(int *arr, int n);
+extern void maius(char *s);
+extern void change(char *s, char t, char c);
 
 int main(int argc, char **argv){
 	
-
-	int *a = crea_arr(N);
-	stampa_array(a, N);
-
 	clock_t start = clock();
 //	------------------------------
 
+	change(argv[1], argv[2][0], argv[3][0]);
 
-	printf("zeri all'interno dell'array:%d\n", countzero(a, N));
-
+	printf("Risultato di change %s\n", argv[1]);
 
 
 //	------------------------------
