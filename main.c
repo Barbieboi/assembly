@@ -12,6 +12,7 @@
 
 void stampa_array(int *a, int n);
 int * crea_arr(int n);
+
 extern int find_max(int *arr, int n);
 extern int fact(int n);
 extern int contapari(int n);
@@ -27,9 +28,9 @@ int main(int argc, char **argv){
 	clock_t start = clock();
 //	------------------------------
 
-	change(argv[1], argv[2][0], argv[3][0]);
+	maius(argv[1]);
 
-	printf("Risultato di change %s\n", argv[1]);
+	printf("Risultato di maius %s\n", argv[1]);
 
 
 //	------------------------------
