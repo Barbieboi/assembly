@@ -18,8 +18,9 @@ loop :
 end :
 	ldr r0 ,=newline
 	bl printf
+	pop {r4, r5 ,r6 ,lr }
 	mov r0 , #0
-	pop {r4, r5 ,r6 ,pc}
+	mov pc , lr 
 
 .data
 	msg :

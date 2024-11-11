@@ -31,7 +31,14 @@ end :
 	mov r0 , r6
 	mov r1 , r4 
 	bl stampa_arr
+	mov r0 , r6
+	mov r1 , r4
+	bl map 
 	mov r0 , r6 
+	mov r0 , r6
+	mov r1 , r4
+	mov r0 , r6 
+	bl stampa_arr
 	bl free
 	mov r0 , #0
 	pop {r4, r5 , r6 , r7 ,pc}

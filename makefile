@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=crea_arr
+TARGET:=
 
-DEPS:=crea_arr.s stampa_arr.s
+DEPS:=
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
