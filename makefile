@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=test_mat
+TARGET:=pippare
 
-DEPS:=main.c stampa_mat.s 
+DEPS:=main.c pippolis.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
