@@ -33,7 +33,6 @@ second_null :
 	b not_true
 
 
-
 not_true :
 	mov r0 , #0
 	mov pc , lr

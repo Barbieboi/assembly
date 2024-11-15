@@ -24,6 +24,6 @@ end :
 
 .data
 	msg :
-		.string "%5d"
+		.string "%d "
 	newline :
 		.string "\n"
