@@ -3,7 +3,7 @@
 .type map , %function
 
 @	r0 -> a r1 -> n r2 -> f(int -> int)
-
+@	map di f su un array di int 
 map :
 	push {lr}
 	mov r3 , r0 

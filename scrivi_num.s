@@ -2,6 +2,8 @@
 .global main
 .type main , %function
 
+@ tentativo di scrittura di interi da riga di comando su file passato come primo argomento
+
 main :
 	push {r4 , r5 ,r6 ,lr}
 	cmp r0 , #2

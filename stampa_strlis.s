@@ -2,6 +2,8 @@
 .global stampa_strlis
 .type stampa_strlis , %function
 
+@ stampare elementi di una lista di stringhe
+
 stampa_strlis :
 	push {lr}
 	loop :

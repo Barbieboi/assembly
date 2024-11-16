@@ -2,7 +2,7 @@
 .global main
 .type main , %function
 
-@ legge interi da riga di comando, allocae rempie l'array, infine lo stampa 
+@ legge interi da riga di comando, alloca e rempie l'array, infine lo stampa 
 
 main : 
 	push {r4, r5 , r6 , r7 ,lr}
