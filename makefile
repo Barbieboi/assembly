@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=pippare
+TARGET:=list
 
-DEPS:=main.c pippolis.s
+DEPS:=main.c removelis.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)

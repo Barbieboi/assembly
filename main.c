@@ -33,6 +33,10 @@ void printStringl(stringl *head);
 void append(stringl **head, const char *str);
 char* generateRandomString(int length) ;
 void creastringlis(stringl **head, int numStrings, int stringLength);
+node_t *creanode(int n);
+node_t *insertnode(node_t *head, int n);
+void initlis(node_t**lis , int n);
+void printlis(node_t *lis);
 
 extern int find_max(int *arr, int n);
 extern int fact(int n);
@@ -47,14 +51,18 @@ extern node_t *merge(node_t *primo, node_t *secondo) ;
 extern void stampa_arr(int* a, int n);
 extern void stampa_mat(int**a , int n , int m);
 extern void stampa_strlis(stringl *head);
-
+extern void removelis(node_t* lis, int n);
 
 
 int main(int argc, char **argv){
 
+	node_t *lis = NULL ;
+	initlis(&lis, N) ;
 	clock_t start = clock();
 //	------------------------------
-
+	printlis(lis);
+	removelis(lis , 9);
+	printlis(lis);
 
 //	------------------------------
 
@@ -182,4 +190,30 @@ void creastringlis(stringl **head, int numStrings, int stringLength) {
     }
 }
 
+node_t *creanode(int num){
+	node_t *res = malloc(sizeof(*res));
+	res->n = num ;
+}
 
+node_t* insertnode(node_t *head, int n){
+	node_t *new = creanode(n);
+	new->next = head;
+	head = new ; 
+	return new ;
+}
+
+void initlis(node_t**lis , int n){
+	srand(time(NULL));
+	node_t* nodo = NULL;
+	for(int i = 0 ; i < n ; i++ ){
+		*lis = insertnode(*lis, rand()%MAX);
+	}
+}
+
+void printlis(node_t *lis){
+	while(lis != NULL){
+		printf("%d -> ", lis->n);
+		lis = lis->next ;
+	}
+	printf ("NULL\n");
+}

@@ -665,3 +665,18 @@ print_msg:
 
 - **Ricerca del massimo valore in una matrice**: Questo esercizio utilizza un ciclo che scorre ogni elemento della matrice. Il valore massimo viene continuamente aggiornato se viene trovato un elemento maggiore. Si utilizza l'indirizzamento con offset per iterare sulla matrice.
 - **Confronto tra due stringhe**: Il ciclo confronta ogni carattere delle due stringhe e si ferma al primo carattere diverso o alla fine delle stringhe. Si utilizza `LDRB` per caricare i caratteri byte per byte. Il programma termina stampando il messaggio di uguaglianza o disuguaglianza in base al risultato del confronto.
+
+## Esercizio 1 
+scrivere una funzione ARMv7 che, presi 3 parametri interi a, b e c, e un quarto parametro intero x, calcoli a*x^2+b*x+c.
+ 
+## Esercizio 2 
+scrivere il codice di una funzione ARMv7 che, preso il puntatore ad un vettore ordinato di interi, la sua size, e un intero da cercare x, ritorni la posizione nel vettore di una occorrenza di x se esiste, oppure -1 altrimenti. La ricerca deve avvenire usando l'algoritmo ricorsivo della ricerca binaria.
+ 
+## Esercizio 3 
+scrivere una funzione ARMv7 che prende come primo parametro il puntatore iniziale ad una stringa e come secondo parametro un carattere. La funzione ritorna il numero di occorrenze del carattere nella stringa.
+ 
+## Esercizio 4 
+scrivere una funzione ARMv7 che prende come primo parametro il puntatore al primo elemento di una lista e restituisce il numero di elementi della lista. Ogni elemento di una lista è una coppia {intero, next} con next puntatore al prossimo elemento (o NULL se questo non esiste).
+ 
+## Esercizio 5
+scrivere una funzione ARMv7 che prende come primo parametro un array di stringhe, e come secondo parametro quante stringhe ci sono nell'array. La funzione ritorna l'indice della stringa più lunga nel vettore fornito.
