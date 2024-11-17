@@ -7,7 +7,7 @@
 #include <time.h>
 
 
-#define N 15
+#define N 10
 #define M 5
 
 #define MAX 20
@@ -56,12 +56,15 @@ extern void removelis(node_t* lis, int n);
 extern int equazione(int a , int b , int c , int x);
 extern int binarysearch(int *a , int size ,int k);
 extern int contacar(char *s, char k);
+extern int lengthlis(node_t* lis);
+extern int longest(char **s , int n);
 
 int main(int argc, char **argv){
 
 	clock_t start = clock();
 //	------------------------------
 
+    printf("indice stringa più lunga: argv[%d]: %s\n", longest(argv, argc) , argv[longest(argv, argc)]);
     
 
 //	------------------------------

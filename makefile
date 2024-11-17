@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=contacar
+TARGET:=longest
 
-DEPS:=main.c contacar.s
+DEPS:=main.c longest.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
