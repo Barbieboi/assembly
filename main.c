@@ -7,10 +7,10 @@
 #include <time.h>
 
 
-#define N 5
+#define N 15
 #define M 5
 
-#define MAX 10
+#define MAX 20
 
 typedef struct nodo{
 	int n ;
@@ -37,6 +37,7 @@ node_t *creanode(int n);
 node_t *insertnode(node_t *head, int n);
 void initlis(node_t**lis , int n);
 void printlis(node_t *lis);
+int compare(const void *a, const void *b);
 
 extern int find_max(int *arr, int n);
 extern int fact(int n);
@@ -52,17 +53,18 @@ extern void stampa_arr(int* a, int n);
 extern void stampa_mat(int**a , int n , int m);
 extern void stampa_strlis(stringl *head);
 extern void removelis(node_t* lis, int n);
-
+extern int equazione(int a , int b , int c , int x);
+extern int binarysearch(int *a , int size ,int k);
 
 int main(int argc, char **argv){
 
-	node_t *lis = NULL ;
-	initlis(&lis, N) ;
+    int *a = crea_arr(N);
 	clock_t start = clock();
 //	------------------------------
-	printlis(lis);
-	removelis(lis , 9);
-	printlis(lis);
+    qsort(a, N , sizeof(int), compare ) ;
+    stampa_array(a, N);
+    printf("%d\n",  binarysearch(a, N, 5));
+
 
 //	------------------------------
 
@@ -106,6 +108,15 @@ int **crea_mat(int n , int m){
 		arr[i]= crea_arr(m);
 	}
     return arr;
+}
+
+int compare(const void *a, const void *b) {
+    // Cast dei puntatori void in puntatori a interi
+    int int_a = *(int *)a;
+    int int_b = *(int *)b;
+
+    // Restituisce il risultato della sottrazione tra i due numeri
+    return (int_a - int_b);
 }
 
 // Funzione per creare un nodo con una stringa

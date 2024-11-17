@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=list
+TARGET:=binarysearch
 
-DEPS:=main.c removelis.s
+DEPS:=main.c binarysearch.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
