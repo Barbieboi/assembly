@@ -55,16 +55,14 @@ extern void stampa_strlis(stringl *head);
 extern void removelis(node_t* lis, int n);
 extern int equazione(int a , int b , int c , int x);
 extern int binarysearch(int *a , int size ,int k);
+extern int contacar(char *s, char k);
 
 int main(int argc, char **argv){
 
-    int *a = crea_arr(N);
 	clock_t start = clock();
 //	------------------------------
-    qsort(a, N , sizeof(int), compare ) ;
-    stampa_array(a, N);
-    printf("%d\n",  binarysearch(a, N, 5));
 
+    
 
 //	------------------------------
 

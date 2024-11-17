@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=binarysearch
+TARGET:=contacar
 
-DEPS:=main.c binarysearch.s
+DEPS:=main.c contacar.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
