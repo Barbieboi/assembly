@@ -58,18 +58,17 @@ extern int binarysearch(int *a , int size ,int k);
 extern int contacar(char *s, char k);
 extern int lengthlis(node_t* lis);
 extern int longest(char **s , int n);
-extern int diagonale(int **a, int n);;
-
+extern int diagonale(int **a, int n);
+extern void inverti(int *a, int n);
 
 int main(int argc, char **argv){
 
 	clock_t start = clock();
 //	------------------------------
-    int **a = crea_mat(N,N);
-    stampa_matrice(a, N , N);
-    printf("somma diagonale: %d\n", diagonale(a, N) );
     
 
+    
+    
 //	------------------------------
 
 	clock_t end = clock();

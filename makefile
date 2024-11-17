@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=diagonale
+TARGET:=principale
 
-DEPS:=main.c diagonale.s
+DEPS:=main_principale.c principale.s somma.s calcola.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
