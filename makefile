@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=longest
+TARGET:=diagonale
 
-DEPS:=main.c longest.s
+DEPS:=main.c diagonale.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)

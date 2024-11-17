@@ -7,7 +7,7 @@
 #include <time.h>
 
 
-#define N 10
+#define N 5
 #define M 5
 
 #define MAX 20
@@ -58,13 +58,16 @@ extern int binarysearch(int *a , int size ,int k);
 extern int contacar(char *s, char k);
 extern int lengthlis(node_t* lis);
 extern int longest(char **s , int n);
+extern int diagonale(int **a, int n);;
+
 
 int main(int argc, char **argv){
 
 	clock_t start = clock();
 //	------------------------------
-
-    printf("indice stringa più lunga: argv[%d]: %s\n", longest(argv, argc) , argv[longest(argv, argc)]);
+    int **a = crea_mat(N,N);
+    stampa_matrice(a, N , N);
+    printf("somma diagonale: %d\n", diagonale(a, N) );
     
 
 //	------------------------------
