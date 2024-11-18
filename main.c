@@ -60,15 +60,16 @@ extern int lengthlis(node_t* lis);
 extern int longest(char **s , int n);
 extern int diagonale(int **a, int n);
 extern void inverti(int *a, int n);
+extern char *invertistr(char* s);
+
 
 int main(int argc, char **argv){
 
 	clock_t start = clock();
 //	------------------------------
-    
 
-    
-    
+    printf("stringa invertita: %s\n", invertistr(argv[1]));
+
 //	------------------------------
 
 	clock_t end = clock();
