@@ -7,7 +7,7 @@
 #include <time.h>
 
 
-#define N 5
+#define N 10
 #define M 5
 
 #define MAX 20
@@ -61,14 +61,22 @@ extern int longest(char **s , int n);
 extern int diagonale(int **a, int n);
 extern void inverti(int *a, int n);
 extern char *invertistr(char* s);
-
+extern int myatoi_signed(char * p);
+extern int map_with_function(char **v, int n , int(*f)(char*));
+extern void replace_characters(char *s , char *from , char* to );
+extern int ricerca_valore(stringl *lis, char *target);
+extern int rimuovi_nodo(stringl *lis, char *target);
+extern int conta_cifre(stringl* lis, char c);
 
 int main(int argc, char **argv){
 
-	clock_t start = clock();
+	clock_t start = clock();    
 //	------------------------------
 
-    printf("stringa invertita: %s\n", invertistr(argv[1]));
+    stringl * lis = NULL ;
+    creastringlis(&lis, N, M) ;
+    printStringl(lis);
+    printf("occorrenze di %c:%d\n" , argv[1][0], conta_cifre(lis, argv[1][0]));
 
 //	------------------------------
 
@@ -175,7 +183,7 @@ char* generateRandomString(int length) {
     }
 
     // Alfabeto da cui scegliere i caratteri
-    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     int charsetSize = sizeof(charset) - 1; // La lunghezza dell'alfabeto (senza il terminatore null)
 
     // Genera una stringa casuale
