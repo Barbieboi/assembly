@@ -734,3 +734,147 @@ x dalla lista. La funzione deve modificare la lista originale.
 Scrivere una funzione ARMv7 che, data una lista concatenata di numeri interi, elimini tutti i duplicati, lasciando solo la prima occorrenza di ogni numero.
 ## Esercizio 20
 Scrivere una funzione ARMv7 che prende come parametri due liste concatenate di numeri interi e restituisce una nuova lista concatenata contenente l'unione dei due insiemi di valori (senza duplicati).
+
+
+# Esercizi creati sulla base dei compitini (Grazie GPT)
+
+## Esercizio 1: Conversione da stringa a intero (Versione con segno)
+
+### Descrizione:
+Realizza la funzione in Assembly ARMv7:
+
+```c
+int myatoi_signed(char *p);
+```
+Questa funzione deve restituire il valore intero corrispondente alla stringa p, che rappresenta un numero intero (positivo o negativo) in base alla sua rappresentazione ASCII (caratteri numerici e segno -).
+
+- Se la stringa rappresenta un numero valido, restituisci il valore numerico.
+- Se la stringa contiene caratteri non numerici, o se non rappresenta un numero valido, la funzione deve restituire -1.
+- Se il numero è preceduto dal carattere -, restituisci il numero come negativo.
+- Nota: La funzione deve gestire numeri a più cifre e numeri negativi.
+Esempio 1: Stringa Positiva
+##### Input:
+```c
+char *s1 = "1234";
+char *s2 = "-5678";
+int result1 = myatoi_signed(s1);
+int result2 = myatoi_signed(s2);
+```
+##### Output:
+```c
+result1 = 1234;
+result2 = -5678;
+```
+### Linee guida:
+Gestire correttamente i segni.
+Utilizzare registri in modo efficiente, rispettando le convenzioni ARMv7.
+Prestare attenzione al ciclo che legge la stringa fino a NULL e alla gestione dei caratteri
+
+## Esercizio 2: Funzione map con applicazione di una funzione su stringhe (Versione con callback)
+Descrizione:
+Realizza la funzione in Assembly ARMv7:
+
+```c
+int map_with_function(char **v, int n, int (*f)(char *));
+```
+Questa funzione deve calcolare la somma dei valori ottenuti applicando una funzione f su ciascuna delle stringhe presenti nel vettore v di lunghezza n. La funzione f deve essere passata come parametro e può essere utilizzata come callback.
+
+Ogni stringa del vettore è una sequenza di caratteri numerici (come nel caso dell'esercizio precedente, ma con la possibilità di personalizzare il comportamento della funzione f).
+
+Nota: La funzione map_with_function applicherà la funzione f ad ogni stringa del vettore e somma i risultati ottenuti.
+
+### Linee guida:
+Utilizzare ```BLX``` per chiamare la funzione f passata come parametro.
+Prestare attenzione all'uso dei registri, specialmente con l'uso di funzioni callback.
+
+## Esercizio 3: Somma di valori numerici nelle stringhe (Con caratteri speciali esclusi)
+Descrizione:
+Realizza una funzione in Assembly ARMv7:
+
+```c
+int sum_digits(char *s);
+```
+Questa funzione riceve una stringa s e restituisce la somma dei valori numerici (dai caratteri '0' a '9'). I caratteri non numerici devono essere ignorati.
+
+Esempio:
+
+``"abc123xyz"`` deve restituire 6 ``(1 + 2 + 3)``.
+### Linee guida:
+Il ciclo deve scorrere tutta la stringa e sommare solo i caratteri numerici.
+Non sono ammessi caratteri di altro tipo, quindi escludili direttamente dal calcolo.
+Usa i registri per effettuare la somma incrementale.
+
+## Esercizio 4: Sostituzione in una stringa (Complessità maggiore)
+Descrizione:
+Scrivi una funzione in Assembly ARMv7:
+
+
+```c
+void replace_characters(char *s, char *from, char *to, int N);
+```
+Questa funzione sostituisce in una stringa s ogni carattere che appare nel vettore ``from[]`` con il carattere corrispondente nel vettore ``to[]``.
+
+Se un carattere di `s` appare nel vettore `from[]`, sostituiscilo con il carattere in posizione corrispondente nel vettore `to[]`.
+Se non appare, lascia il carattere invariato.
+### Linee guida:
+Gestire il ciclo per percorrere ogni carattere della stringa s.
+Utilizzare una funzione ausiliaria che restituisca il carattere da sostituire (simile alla funzione cambia nell'esercizio precedente).
+
+## Esercizio 5: Conversione in base 10 di una stringa esadecimale
+Descrizione:
+Scrivi la funzione in Assembly ARMv7:
+
+```c
+int hex_to_int(char *p);
+```
+Questa funzione converte una stringa che rappresenta un numero esadecimale in un numero intero decimale.
+
+Esempio:
+
+`"1A"` deve restituire `26 (1 * 16 + 10)`.
+`"FF"` deve restituire `255 (15 * 16 + 15)`.
+### Linee guida:
+Gestire correttamente i caratteri da `0-9` e `A-F`.
+Assicurati di trattare le lettere maiuscole e minuscole (es. `'a'` e `'A'` devono essere equivalenti).
+## Esercizio 6: Ricerca di un valore in una lista (Lista legata)
+Descrizione:
+Implementa una funzione in Assembly ARMv7:
+
+
+```c
+int ricerca_valore(node_t *lista, char *target);
+```
+Questa funzione riceve un puntatore al primo elemento della lista e una stringa target. La funzione deve restituire `1` se la stringa `target` appare in uno dei nodi della lista, altrimenti restituisce `0`.
+
+Ogni nodo contiene un puntatore a una stringa `NULL` terminated e un puntatore al nodo successivo.
+La ricerca è case-sensitive (ad esempio, `"abc"` e `"ABC"` sono considerati diversi).
+### Linee guida:
+Implementa un ciclo che attraversa la lista e confronta ogni stringa con `target`.
+Usa correttamente i registri per gestire i puntatori e il confronto delle stringhe.
+## Esercizio 7: Rimozione di un nodo in una lista legata
+Descrizione:
+Scrivi la funzione in Assembly ARMv7:
+
+```c
+int rimuovi_nodo(node_t **lista, char *target);
+```
+Questa funzione riceve il puntatore al puntatore al primo elemento della lista e una stringa `target`. Se uno dei nodi contiene la stringa target, rimuovilo dalla lista (aggiornando il puntatore del nodo precedente). Restituisci `1` se un nodo è stato rimosso, altrimenti restituisci `0`.
+
+### Linee guida:
+Implementa un ciclo che attraversa la lista e rimuove il nodo quando trova il target.
+Gestisci correttamente i puntatori per aggiornare la lista.
+## Esercizio 8: Contare le occorrenze di una cifra in una lista di stringhe
+Descrizione:
+Scrivi una funzione in Assembly ARMv7:
+
+```c
+int conta_cifre(node_t *lista, char c);
+```
+Questa funzione conta quante volte la cifra `c` appare in tutte le stringhe contenute nella lista legata lista.
+
+### Esempio:
+
+Se la lista contiene le stringhe `"12"`, `"34"`, `"12"`, e `c = '1'`, la funzione restituirà `2`.
+### Linee guida:
+Utilizza una funzione ausiliaria per contare le occorrenze di c in ciascuna stringa.
+Gestisci i nodi della lista in modo efficiente.
