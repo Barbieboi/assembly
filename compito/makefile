@@ -4,9 +4,9 @@ LDLIBS=-lm
 MAKEFLAGS += -r
 
 
-TARGET:=conta_cifre
+TARGET:=a.out
 
-DEPS:=main.c conta_cifre.s conta.s
+DEPS:=main.c conta_strings.s conta.s
 
 $(TARGET):$(DEPS)
 	$(CC) $^ -o $@ $(ARMFLAGS)
